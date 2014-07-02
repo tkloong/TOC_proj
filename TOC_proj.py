@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #Author		: 陳勁龍
 #Student ID	: F74005018
-#Description	: Calculate average sale price of the every county in Taiwan in year 100 and 101
+#Description	: Calculate average sale price per m^2 of the every county in Taiwan in year 100 and 101
 
 import sys
 import urllib
