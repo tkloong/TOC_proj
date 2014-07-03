@@ -13,7 +13,7 @@ How to execute?
 ---------------
 python TOC_proj.py
 
-How do we analysis?
+How do we analyse?
 -------------------
 At first, we are going to use CPI of each area to compare with the housing prices. Through dividing CPI by housing prices, we can conclude that houses in which area has more CP value.
 
