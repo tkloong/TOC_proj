@@ -11,7 +11,7 @@ We are curious about in Taiwan, house prices in which area is being pushed high.
 
 How to execute?
 ---------------
-python TOCproj.py
+python TOC_proj.py
 
 How do we analysis?
 -------------------
