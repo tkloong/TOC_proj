@@ -55,16 +55,23 @@ for line in f:
 	if info.get(income[0].decode('utf-8')) is not None:
 		info[income[0].decode('utf-8')][int(income[1])][i_income] = int(income[2])
 
-print '----------------------------------------------------------------'
-print 'COUNTY YEAR PRICES(/m^2) INCOME INCOME/PRICES INCOME_GROWTH_RATE'
-print '----------------------------------------------------------------'
+# Draw table
+print '-----------------------------------------------------------------------------------'
+print 'COUNTY YEAR PRICES(/m^2) INCOME INCOME/PRICES INCOME_GROWTH_RATE PRICES_GROWTH_RATE'
+print '-----------------------------------------------------------------------------------'
 for y in (100, 101):
 	for county in county_set:
 		if info[county][y][i_matches] != 0:
 			info[county][y][i_mean] = info[county][y][i_prices]/info[county][y][i_matches]
 			print u'{0}\t{1}\t{2}\t{3}\t{4}'.format(county, y, info[county][y][i_mean], info[county][y][i_income], float(info[county][y][i_income])/info[county][y][i_mean]),
+			# Calculate income growth rate 
 			if info[county].get(y-1) is not None:
-				print u'\t{0}'.format(float(info[county][y][i_income]-info[county][y-1][i_income])/info[county][y-1][i_income])
+				print u'\t{0}'.format(float(info[county][y][i_income]-info[county][y-1][i_income])/info[county][y-1][i_income]),
+				# Calculate housing prices' growth rate 
+				if info[county][y-1][i_matches] != 0:
+					print u'\t{0}'.format(float(info[county][y][i_prices]-info[county][y-1][i_prices])/info[county][y-1][i_prices])
+				else:
+					print ''
 			else:
 				print ''
 
